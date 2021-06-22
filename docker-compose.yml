@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+
+  app: &app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command:
+      - yarn install --check-files
+
+  test: &test
+    <<: *app
+    command: yarn test
