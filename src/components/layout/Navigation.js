@@ -5,7 +5,7 @@ const Navigation = () => {
   return (
     <nav className="cerb-nav">
       <NavItem text="Home" url="/" />
-      <NavItem text="About" url="#" />
+      <NavItem text="About" url="/about" />
     </nav>
   )
 }
