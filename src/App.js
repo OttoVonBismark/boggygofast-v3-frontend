@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Header from './components/layout/Header'
+import Navigation from './components/layout/Navigation'
+import Footer from './components/layout/Footer'
+
+// Routes
+// import About from './containers/About'
+// import Error404 from './containers/errors/Error404'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Header />
+        <Navigation />
+      </div>
+      {/* If the route matches "/" exactly, render all this stuff, otherwise don't. */}
+      <Route path="/" exact render={(prop) => (
+        <div className="mx-2">
+          <h1 className="font-bold text-3xl-mb-2">BoggyGoFast V3!</h1>
+          <p className="mb-4">Now with 50% more temporary text!</p>
+        </div>
+      )} />
+
+      <Footer />
+    </Router>
   );
 }
 
