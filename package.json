@@ -30,6 +30,15 @@
       "react-app/jest"
     ]
   },
+  "jest": {
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest"
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -43,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.14.5",
     "react-test-renderer": "^17.0.2"
   }
 }
