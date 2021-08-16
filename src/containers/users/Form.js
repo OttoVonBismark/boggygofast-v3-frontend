@@ -2,9 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 
-// TODO: Add submitButtonText prop
-// TODO: Add button component and pass submitButtonText along to it.
-const Form = ({ newUser }) => {
+const Form = ({ newUser, submitButtonText }) => {
   // If newUser is true, all fields should be blank. Otherwise, use the current user's properties (to be added later)
   const [email, setEmail] = useState(newUser ? '' : '')
   const [username, setUsername] = useState(newUser ? '' : '')
@@ -48,20 +46,20 @@ const Form = ({ newUser }) => {
         <input type='password' value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} />
         <br/>
 
-        <input type='submit' value='Submit' className='btn btn-block'/>
+        <input type='submit' value={submitButtonText} className='btn btn-block'/>
       </form>
     </div>
   )
 }
 
 Form.defaultProps = {
-  newUser: true,
-  // submitButtonText: 'Register'
+  newUser: false,
+  submitButtonText: 'Update'
 }
 
 Form.propTypes = {
   newUser: PropTypes.bool,
-  // submitButtonText: PropTypes.string
+  submitButtonText: PropTypes.string
 }
 
 export default Form

@@ -5,7 +5,7 @@ const Registration = () => {
   return (
     <div>
       <h1>Register a New User</h1> 
-      <Form newUser={true} />
+      <Form newUser={true} submitButtonText='Register' />
     </div>
   )
 }
