@@ -4,7 +4,7 @@ import Form from './Form'
 const Registration = () => {
   return (
     <div>
-      <h1>Register a New User</h1> 
+      <h1 className="font-bold text-3xl mb-2">Registration</h1> 
       <Form newUser={true} submitButtonText='Register' />
     </div>
   )

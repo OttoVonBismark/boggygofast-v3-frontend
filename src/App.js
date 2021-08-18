@@ -7,6 +7,7 @@ import Footer from './components/layout/Footer'
 // Routes
 import About from './containers/About'
 import Registration from './containers/users/Registration'
+import Confirm from './containers/users/Confirm'
 import Error404 from './containers/errors/Error404'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Route path="/about" component={About} />
       <Route path="/register" component={Registration} />
       <Route path="/404" exact component={Error404} />
+      <Route path='/confirmation/:token' exact component={Confirm} />
 
       <Footer />
     </Router>

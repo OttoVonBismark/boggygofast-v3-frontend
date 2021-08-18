@@ -10,26 +10,60 @@ const Form = ({ newUser, submitButtonText }) => {
   // This one might break due to camelCase vs snake_case on the incoming user_params in Rails
   const [passwordConfirmation, setPasswordConfirmation] = useState(newUser ? '' : '')
 
-  const onSubmit = (e) => {
-    e.preventDefault() // Might not need this since we're going to redirect
+  // TODO: Move me somewhere else
+  // const BASE_URL = 'http://localhost:3001/api'
+  // const REG_URL = '/signup'
+  // const UPDATE_URL = 'a value'
 
-    if(!email || !username || !password || !passwordConfirmation) {
-      alert('Please fill out all of the values.')
-      return
+  // const onSubmit = (e) => {
+  //   e.preventDefault() // Might not need this since we're going to redirect
+
+  //   if(!email || !username || !password || !passwordConfirmation) {
+  //     alert('Please fill out all of the values.')
+  //     return
+  //   }
+
+  //   if(password !== passwordConfirmation) {
+  //     alert('Password and Password Confirmation do not match.')
+  //     return
+  //   }
+
+  //   alert('You won!')
+  // }
+  const updateUser = (e) => {
+    // Do some stuff
+    alert('NYI')
+    return
+  }
+
+  const registerUser = async (e) => {
+    // TODO: Rewrite me to use Axios
+    e.preventDefault()
+
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        user: {
+          email: email,
+          username: username,
+          password: password,
+          password_confirmation: passwordConfirmation
+        }
+      })
     }
+    const res = await fetch('http://localhost:3001/api/signup', requestOptions)
+    const data = await res.json()
 
-    if(password !== passwordConfirmation) {
-      alert('Password and Password Confirmation do not match.')
-      return
-    }
-
-    alert('You won!')
+    console.log(data)
   }
 
   return (
     <div>
       <h3>This is the registration form. newUser is {newUser ? 'true' : 'false'}</h3>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={newUser ? registerUser : updateUser }>
         <label>Email Address:</label>
         <input type='text' placeholder='user@example.com' value={email} onChange={(e) => setEmail(e.target.value)} />
         <br/>
