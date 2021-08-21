@@ -1,0 +1,60 @@
+/* Main CSS File. This is the focal point of all CSS in the application. */
+/* Color Palette
+TODO: Monserrat headline font and Roboto body font. Look into implementing those here.
+#0b2027 - Charleston Green - Background, other dark elements.
+#40798c - Teal Blue - A nice dark blue used for the navigation button background
+#70a9a1 - Green Sheen - A muted blue-green. Used for the navigation rule.
+#e2f89c - Mindaro - A bright muted yellow. Good for putting emphasis on text.
+#70566d - Old Lavender - Generally backs the Mindaro elements.
+
+Try to stick to these base colors so we can stay cohesive, but adjust brightness as needed.
+*/
+
+/* Keep Tailwind stuff here */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+  display: grid;
+  width: 80%;
+  align-content: center;
+  background: #0B2027;
+  color: lightgrey;
+  margin: 0 auto;
+}
+
+.bgf-nav {
+  @apply pl-2 pt-2 pb-2 mt-2;
+  display: inline-block;
+  border: none;
+  border-radius: .5rem;
+  background-color: #70A9A1;
+  width: 100%;
+}
+
+.bgf-nav-item {
+  display: inline-block;
+  border: none;
+  border-radius: .5rem;
+  padding: .25rem 1.5rem;
+  text-decoration: none;
+  background-color: #40798C;
+  color: #fefefe;
+  width: auto;
+  transition-duration: 0.3s;
+  filter: drop-shadow(0 0 0.15rem black);
+  @apply pr-2 pl-2 mx-1 font-bold text-2xl
+}
+
+.bgf-nav-item:hover {
+  background-color: #8a86c7;
+  color: black;
+}
+
+.footer {
+  display: block;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: .75rem;
+}
