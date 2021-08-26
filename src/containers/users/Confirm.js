@@ -25,12 +25,17 @@ const Confirm = (props) => {
     axios.get(`${BASE_URL}${token}`)
       .catch(
         data => {
+          if (!data.isDefined) {
+            setConfirmed('Wait, I have no backend? The hell!?')
+            console.log('Error: The backend did not respond!')
+            return
+          }
           if (data.response.status === 400) {
-            setConfirmed('Heck!')
+            setConfirmed("Heck! Something went wrong during activation. Try clicking the email link again?")
             console.log('Error', data)
           }
           if (data.response.status === 200) {
-            setConfirmed('Success!')
+            setConfirmed('Success! You may now log in!')
           }
         }
       )
