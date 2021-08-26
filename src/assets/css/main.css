@@ -1,11 +1,11 @@
 /* Main CSS File. This is the focal point of all CSS in the application. */
 /* Color Palette
 TODO: Monserrat headline font and Roboto body font. Look into implementing those here.
-#0b2027 - Charleston Green - Background, other dark elements.
-#40798c - Teal Blue - A nice dark blue used for the navigation button background
-#70a9a1 - Green Sheen - A muted blue-green. Used for the navigation rule.
-#e2f89c - Mindaro - A bright muted yellow. Good for putting emphasis on text.
-#70566d - Old Lavender - Generally backs the Mindaro elements.
+#01161E - Rich Black (kinda blue) - Background, other dark elements.
+#124559 - Midnight Eagle Green - Not rally green, but a blue color. A good color for text to be on.
+#598392 - Teal - A muted blue-green. Used for the navigation rule.
+#F5E2C8 - Champagne - Text color.
+#86CB92 - Eton - Green color. Could be used for links/affirmative buttons.
 
 Try to stick to these base colors so we can stay cohesive, but adjust brightness as needed.
 */
@@ -15,12 +15,22 @@ Try to stick to these base colors so we can stay cohesive, but adjust brightness
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* Variables */
+:root {
+  --rich_black: #01161E;
+  --midnight_eagle: #124559;
+  --teal: #598392;
+  --champagne: #f5e2c8;
+  --alabaster: #f4f3ee;
+  --eton: #86cb92;
+}
+
 body {
   display: grid;
   width: 80%;
   align-content: center;
-  background: #0B2027;
-  color: lightgrey;
+  background: var(--rich_black);
+  color: var(--champagne);
   margin: 0 auto;
 }
 
@@ -29,7 +39,7 @@ body {
   display: inline-block;
   border: none;
   border-radius: .5rem;
-  background-color: #70A9A1;
+  background-color: var(--midnight_eagle);
   width: 100%;
 }
 
@@ -40,7 +50,7 @@ body {
   padding: .25rem 1.5rem;
   text-decoration: none;
   background-color: #40798C;
-  color: #fefefe;
+  color: var(--eton);
   width: auto;
   transition-duration: 0.3s;
   filter: drop-shadow(0 0 0.15rem black);
@@ -57,4 +67,9 @@ body {
   margin-top: 1.5rem;
   text-align: center;
   font-size: .75rem;
+}
+
+.container {
+  display: grid;
+  align-content: center;
 }

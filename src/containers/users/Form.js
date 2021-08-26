@@ -62,25 +62,24 @@ const Form = ({ newUser, submitButtonText }) => {
 
   return (
     <div>
-      <h3>This is the registration form. newUser is {newUser ? 'true' : 'false'}</h3>
       <form onSubmit={newUser ? registerUser : updateUser }>
-        <label>Email Address:</label>
-        <input type='text' placeholder='user@example.com' value={email} onChange={(e) => setEmail(e.target.value)} />
-        <br/>
+        <div className="form-body">
+          <label>Email Address:</label>
+          <input type='text' className="text-field" placeholder='user@example.com' value={email} onChange={(e) => setEmail(e.target.value)} />
 
-        <label>Username:</label>
-        <input type='text' placeholder='username' hint='must be unique' value={username} onChange={(e) => setUsername(e.target.value)} />
-        <br/>
+          <label>Username:</label>
+          <input type='text' className="text-field" placeholder='username' hint='must be unique' value={username} onChange={(e) => setUsername(e.target.value)} />
 
-        <label>Password:</label>
-        <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
-        <br/>
+          <label>Password:</label>
+          <input type='password' className="text-field" value={password} onChange={(e) => setPassword(e.target.value)} />
 
-        <label>Confirm Password:</label>
-        <input type='password' value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} />
-        <br/>
+          <label>Confirm Password:</label>
+          <input type='password' className="text-field" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} />
+        </div>
 
-        <input type='submit' value={submitButtonText} className='btn btn-block'/>
+        <div className="button-controls">
+          <input type='submit' value={submitButtonText} className='submit-button'/>
+        </div>
       </form>
     </div>
   )
