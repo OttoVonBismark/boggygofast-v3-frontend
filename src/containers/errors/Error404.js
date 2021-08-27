@@ -1,3 +1,5 @@
+import React from 'react'
+
 const Error404 = () => {
   // TODO: Should we return HTTP 404 here?
   return (

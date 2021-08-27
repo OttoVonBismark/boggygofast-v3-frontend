@@ -1,0 +1,75 @@
+/* Main CSS File. This is the focal point of all CSS in the application. */
+/* Color Palette
+TODO: Monserrat headline font and Roboto body font. Look into implementing those here.
+#01161E - Rich Black (kinda blue) - Background, other dark elements.
+#124559 - Midnight Eagle Green - Not rally green, but a blue color. A good color for text to be on.
+#598392 - Teal - A muted blue-green. Used for the navigation rule.
+#F5E2C8 - Champagne - Text color.
+#86CB92 - Eton - Green color. Could be used for links/affirmative buttons.
+
+Try to stick to these base colors so we can stay cohesive, but adjust brightness as needed.
+*/
+
+/* Keep Tailwind stuff here */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Variables */
+:root {
+  --rich_black: #01161E;
+  --midnight_eagle: #124559;
+  --teal: #598392;
+  --champagne: #f5e2c8;
+  --alabaster: #f4f3ee;
+  --eton: #86cb92;
+}
+
+body {
+  display: grid;
+  width: 80%;
+  align-content: center;
+  background: var(--rich_black);
+  color: var(--champagne);
+  margin: 0 auto;
+}
+
+.bgf-nav {
+  @apply pl-2 pt-2 pb-2 mt-2;
+  display: inline-block;
+  border: none;
+  border-radius: .5rem;
+  background-color: var(--midnight_eagle);
+  width: 100%;
+}
+
+.bgf-nav-item {
+  display: inline-block;
+  border: none;
+  border-radius: .5rem;
+  padding: .25rem 1.5rem;
+  text-decoration: none;
+  background-color: #40798C;
+  color: var(--eton);
+  width: auto;
+  transition-duration: 0.3s;
+  filter: drop-shadow(0 0 0.15rem black);
+  @apply pr-2 pl-2 mx-1 font-bold text-2xl
+}
+
+.bgf-nav-item:hover {
+  background-color: #8a86c7;
+  color: black;
+}
+
+.footer {
+  display: block;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: .75rem;
+}
+
+.container {
+  display: grid;
+  align-content: center;
+}
