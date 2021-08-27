@@ -20,9 +20,9 @@ label {
 
 .text-field {
   background-color: var(--champagne);
+  color: var(--rich_black);
   border: none;
   border-radius: .25rem;
-  color: var(--rich-black);
   margin-top: .25rem;
   margin-bottom: .25rem;
   padding: .25rem;
@@ -41,7 +41,7 @@ label {
   background-color: var(--champagne);
   border: none;
   border-radius: .25rem;
-  color: var(--rich-black);
+  color: var(--rich_black);
   margin-top: .25rem;
   margin-bottom: .25rem;
   padding: .25rem;
@@ -61,7 +61,7 @@ label {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: stretch;
-  color: var(--rich-black);
+  color: var(--rich_black);
   margin-top: .25rem;
   margin-bottom: .25rem;
   padding: .25rem;
